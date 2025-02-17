@@ -1,0 +1,107 @@
+---
+import { SITE_TITLE, SITE_TAGLINE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Ava from '@src/assets/img/ava.jpg';
+import Prose from '../components/Prose.astro';
+import { projects } from './projects/projects';
+import ProjectList from '../components/ProjectList.astro';
+import PostItem from '../components/PostItem.astro';
+
+type BlogPost = CollectionEntry<'blog'>;
+
+const top6Projects = projects.slice(0, 6);
+const posts = (await getCollection('blog'))
+	.sort((a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 5);
+---
+
+<BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION}>
+	<div class='container'>
+		<div class='w-full md:flex md:items-center gap-16 mb-10'>
+			<div class='text-pretty leading-9'>
+				<h1 class='text-4xl font-bold mb-4'>Hi 👋, Aman Here!</h1>
+				<Prose>
+					<div class='text-lg'>
+						<p>
+							🚀 <strong
+								>I’m a software developer and the Director of Engineering at <a href='https://bushwick.digital'>Bushwick Digital</a
+								>.</strong
+							> With <strong>10+ years of experience</strong>, I’ve helped <strong>startups and scale-ups</strong> build and optimize their digital
+							products.
+						</p>
+
+						<p>
+							💡 Over the years, I’ve worked with <strong>a diverse tech stack</strong> and worn <strong>many hats</strong>, from
+							architecting scalable applications to automating workflows.
+						</p>
+
+						<p>
+							💻 I’m a <strong>full-stack engineer</strong> at heart with an eye for <strong>intuitive user experiences</strong>, with
+							expertise in <strong>frontend, backend, databases, DevOps, and cloud infrastructure</strong>.
+						</p>
+						<p class='my-3 flex flex-col flex-wrap gap-2 sm:my-5 sm:flex-row sm:gap-6'>
+							<a
+								class='flex items-center gap-2 font-normal no-underline transition-colors hover:text-zinc-500 sm:bg-transparent bg-zinc-800 rounded-lg py-1.5 sm:py-0 sm:px-0 px-3'
+								href='https://github.com/amanullahtanweer'
+								target='_blank'
+							>
+								<svg role='img' class='h-[20px] w-[20px]' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
+									><title>GitHub</title><path
+										d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'
+										fill='currentColor'></path></svg
+								> GitHub
+							</a>
+							<a
+								class='flex items-center gap-2 font-normal no-underline transition-colors hover:text-zinc-500 sm:bg-transparent bg-zinc-800 rounded-lg py-1.5 sm:py-0 sm:px-0 px-3'
+								href='https://www.linkedin.com/in/mramanullah/'
+								target='_blank'
+							>
+								<svg role='img' class='h-[20px] w-[20px]' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
+									><title>LinkedIn</title><path
+										d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'
+										fill='currentColor'></path></svg
+								> LinkedIn
+							</a>
+
+							<a
+								class='flex items-center gap-2 font-normal no-underline transition-colors hover:text-zinc-500 sm:bg-transparent bg-zinc-800 rounded-lg py-1.5 sm:py-0 sm:px-0 px-3'
+								href='mailto:aman@bushwickdigital.com'
+								target='_blank'
+							>
+								<svg class='h-[20px] w-[20px]' xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 20 20'
+									><path
+										fill='currentColor'
+										d='M3.87 4h13.25C18.37 4 19 4.59 19 5.79v8.42c0 1.19-.63 1.79-1.88 1.79H3.87c-1.25 0-1.88-.6-1.88-1.79V5.79c0-1.2.63-1.79 1.88-1.79zm6.62 8.6l6.74-5.53c.24-.2.43-.66.13-1.07c-.29-.41-.82-.42-1.17-.17l-5.7 3.86L4.8 5.83c-.35-.25-.88-.24-1.17.17c-.3.41-.11.87.13 1.07z'
+									></path></svg
+								> Email
+							</a>
+						</p>
+					</div>
+				</Prose>
+			</div>
+			<div class='rounded-3xl rotate-3 mx-4 md:mx-0'></div>
+		</div>
+		<main>
+			<div class='mt-6 mb-12'>
+				<div class='flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700'>
+					<h2 class='text-lg font-bold mb-3'>Recent Posts</h2>
+					<a href='/posts/' class='inline-block py-2 underline dark:prose-invert'>All posts &raquo;</a>
+				</div>
+				<div>
+					{posts.map((post: BlogPost) => <PostItem post={post} />)}
+				</div>
+				<div class='text-right'></div>
+			</div>
+			<div>
+				<div class='flex justify-between gap-2 mb-1'>
+					<h2 class='text-lg font-bold mb-3'>My Projects</h2>
+					<a href='/projects/' class='inline-block py-2 underline dark:prose-invert'>All projects &raquo;</a>
+				</div>
+				<ProjectList projects={top6Projects} />
+			</div>
+		</main>
+	</div>
+</BaseLayout>

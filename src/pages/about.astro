@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Ava from '@src/assets/img/amanullah.jpg';
+import Prose from '../components/Prose.astro';
+---
+
+<BaseLayout title='About Me' description='Lorem ipsum dolor sit amet'>
+	<div class='container'>
+		<main class='prose text-lg dark:prose-invert'>
+			<article>
+				<div class='w-full md:flex md:items-center gap-16 mb-10'>
+					<div class='text-pretty leading-9'>
+						<h1 class='text-4xl font-bold mb-4'>Hi 👋, Aman Here!</h1>
+						<Prose>
+							<div class='text-lg'>
+								<p>
+									🚀 I’m a <strong>full-stack software engineer</strong> and the <strong
+										>Director of Engineering at <a href='https://bushwickdigital.com'>Bushwick Digital</a></strong
+									>. With over a decade of experience, I have worked with startups and scale-ups, helping them build, optimize, and scale
+									their digital products. My passion lies in developing high-performance applications, solving complex technical challenges,
+									and creating seamless user experiences.
+								</p>
+							</div>
+						</Prose>
+					</div>
+					<Image src={Ava} alt='Muhammad Syakirurohman' width={300} class='rounded-3xl rotate-3 mx-4 md:mx-0' />
+				</div>
+				<div>
+					<h3 class='text-3xl font-bold mb-4'>My Journey</h3>
+					<p>
+						From the early days of coding to leading engineering teams, my career has been a mix of hands-on development and strategic
+						problem-solving. Over the years, I’ve worn many hats—developer, architect, and technical lead—allowing me to approach challenges
+						from multiple perspectives. Whether it’s <strong
+							>building scalable applications, automating workflows, or streamlining deployments</strong
+						>, I thrive in environments that require innovation and efficiency.
+					</p>
+
+					<h3 class='text-3xl font-bold mb-4'>What I Do</h3>
+					<ul>
+						<li>
+							💡 <strong>Full-Stack Development:</strong> I work across the entire tech stack, specializing in <strong
+								>React, WordPress, and modern web architectures</strong
+							> to build scalable and maintainable solutions.
+						</li>
+						<li>
+							🛠️ <strong>DevOps & Cloud:</strong> I focus on <strong>cloud infrastructure, automation, and CI/CD pipelines</strong>,
+							ensuring applications run efficiently and scale effortlessly.
+						</li>
+						<li>
+							📊 <strong>Data & Performance Optimization:</strong> From designing <strong>efficient databases</strong> to implementing <strong
+								>performance optimizations</strong
+							>, I ensure every system is built for speed and reliability.
+						</li>
+						<li>
+							🔍 <strong>Problem-Solving Mindset:</strong> Whether it’s debugging complex systems or architecting new solutions, I bring a <strong
+								>strategic and detail-oriented approach</strong
+							> to engineering.
+						</li>
+					</ul>
+					<h3 class='text-3xl font-bold mb-4'>My Philosophy</h3>
+					<p>
+						I believe that <strong>great software isn’t just about writing code—it’s about solving real-world problems</strong>. I
+						prioritize <strong>clean, maintainable code</strong>, accessibility, and user-first design. My goal is to build <strong
+							>products that not only work efficiently but also create impact</strong
+						>.
+					</p>
+
+					<h3 class='text-3xl font-bold mb-4'>Let’s Connect!</h3>
+					<p>
+						If you’re interested in collaborating, feel free to reach out! I’m always open to discussing new projects, exchanging ideas, and
+						learning from fellow developers. 🚀
+					</p>
+
+					<p><a href='mailto:aman@bushwickdigital.com'>aman[@]bushwickdigital.com</a></p>
+				</div>
+			</article>
+		</main>
+	</div>
+</BaseLayout>
