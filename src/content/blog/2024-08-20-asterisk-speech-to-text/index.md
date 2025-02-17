@@ -5,7 +5,7 @@ slug: 'asterisk-speech-to-text'
 description: 'A comparison of AEAP, Google Speech-to-Text, and Vosk for transcribing calls in Asterisk 21.'
 pubDate: '2024-08-20'
 updatedDate: '2024-08-20'
-tags: ['Asterisk', 'Speech-to-Text', 'VoIP', 'AEAP', 'Vosk']
+tags: ['Asterisk', 'Google Cloud']
 ---
 
 ## **Introduction**
