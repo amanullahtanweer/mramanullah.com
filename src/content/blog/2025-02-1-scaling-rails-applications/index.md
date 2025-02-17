@@ -3,8 +3,8 @@ title: 'Scaling Rails Applications on High-Performance Servers: My Lessons Learn
 seoTitle: 'Scaling Rails Apps on High-Performance Servers'
 slug: 'scaling-rails-applications'
 description: 'Lessons from scaling Rails apps on high-performance servers for AI, VoIP, and large-scale API workloads.'
-pubDate: '2025-02-16'
-updatedDate: '2025-02-16'
+pubDate: '2025-02-1'
+updatedDate: '2025-02-1'
 tags: ['Rails', 'Scaling', 'Performance', 'DevOps']
 ---
 
